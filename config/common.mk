@@ -14,6 +14,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+ADDITIONAL_DEFAULT_PROPERTIES := \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    persist.service.adb.enable=1
+
 # Disable excessive dalvik debug messages
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
@@ -88,12 +93,16 @@ PRODUCT_PACKAGES += \
 # Extra Optional packages
 PRODUCT_PACKAGES += \
     SlimBootAnimation \
-    SlimLauncher \
+    Launcher3 \
     SlimWallpaperResizer \
     SlimWallpapers \
     LatinIME \
+    ThemeInterfacer \
     BluetoothExt \
     WallpaperPicker
+
+PRODUCT_PACKAGES += \
+    CellBroadcastReceiver
 
 #    SlimFileManager removed until updated
 
