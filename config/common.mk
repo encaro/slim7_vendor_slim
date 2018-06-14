@@ -104,7 +104,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
 
-#    SlimFileManager removed until updated
+# Build Substratum unless HAS_SUBSTRATUM is set to false
+ifneq ($(HAS_SUBSTRATUM),false)
+    PRODUCT_PACKAGES += \
+        Substratum
+endif
+
+# Adaway
+PRODUCT_PACKAGES += \
+        Adaway	
 
 ifneq ($(DISABLE_SLIM_FRAMEWORK), true)
 ## Slim Framework
